@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+hr.style18 { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+  margin: auto;
+} 
+hr.style18:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px;
+}
+</style>
+<h1> <center> Courses </center></h1>
+<hr class="style18">
+
+<div>
+    {% for catalog in CatalogList %}
+        <center><a href="{{ url_for('show_course_description', TermCode = TermCode, SchoolCode = SchoolCode, SubjectCode = SubjectCode, CatalogNumber = catalog['CatalogNumber']) }}">{{ catalog['CourseTitle'] }} </a></center><br>
+    {% endfor %}
+</div>
+
+{% endblock %}

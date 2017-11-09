@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
+
+li {
+    float: left;
+    border-right: 2px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    color: black;
+    text-align: center;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+
+</style>
+    {% block head %}
+    <title>AMaizenPlanner</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mystyle.css') }}">
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    setTimeout(function(){
+      $(".loading").fadeOut(300);
+    setTimeout(function(){
+      $("#hide").fadeIn(310);
+    }, 400);           
+},400);
+</script>
+
+<script type="text/javascript">
+var scrolledAmount = 600;
+
+$(window).scroll(function() {
+  if ( $(window).scrollTop() > scrolledAmount ) {
+    $('a.back-to-top').fadeIn();
+  } else {
+    $('a.back-to-top').fadeOut();
+  }
+});
+</script>
+<script type="text/javascript">
+$('a.back-to-top').click(function() {
+  $('html, body').animate({
+    scrollTop: 0
+  }, 400);
+  return false;
+});
+</script>
+  </head>
+
+  <body > 
+  <div id="hide" hidden> 
+  <ul>
+    <li><a class="active" href='{{ url_for('main') }}'>AMaizen Planner</a></li>
+    <li><a href='{{ url_for('index') }}'>Browse</a></li>
+    <li><a href='{{ url_for('about') }}'>About</a></li>
+    <li><a href="https://wolverineaccess.umich.edu/f/u24l1s13/normal/render.uP">Wolverine Access</a></li>
+    <li><a href="http://www.ratemyprofessors.com/">Rate My Professor</a></li>
+  </ul>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+      {% endblock %}
+    </div>
+    
+    <a href="#" class="back-to-top"></a>
+
+</div>
+<img src= "https://www.mathworks.com/eloqua/images/loading.gif" style = "padding-left:55em; padding-top:25em;" class= "loading"> 
+  </body>
+
+</html>

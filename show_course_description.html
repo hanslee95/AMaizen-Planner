@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+hr.style18 { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+  margin: auto;
+} 
+hr.style18:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+a {
+    margin-left: 40px;
+    text-align: left;
+    font-variant: small-caps;
+}
+tr:hover{background-color:#f5f5f5}
+h2 {
+    text-decoration: underline;
+    text-align: left;
+}
+h3{
+  text-align: left;
+}
+</style>
+<center><h1>Course Description</h1>
+<hr class="style18">
+<div style="width: 850px; height: 470px;vertical-align: center;" align="center">
+<table style="padding-left: 20px; width: 700px; border: 20px white; background-color: white;">
+<br><h2>{{SubjectCode}} {{CatalogNumber}} in the {{TermCode}} term:</h2><h3>{{CourseList}}</h3></br>
+
+<tr>
+<th><strong> Sections </strong></th>
+<th><strong> Instructor(s) </strong></th>
+<th><strong> Meeting Times </strong></th>
+<th><strong> Location </strong></th>
+<th><strong> Enrollment Status </strong></th>
+<th><strong> Credits</strong></th>
+<th><strong> Available Seats</strong></th>
+<th><strong> Enrollment Total</strong></th>
+<th><strong> Enrollment Capacity</strong></th>
+<th><strong> Waitlist Total</strong></th>
+</tr>
+{% for section in SectionNumList %} <tr>
+<td><a href="{{ url_for('show_map', TermCode = TermCode, SchoolCode = SchoolCode, SubjectCode = SubjectCode, CatalogNumber = CatalogNumber) }}">{{ SectionDetailsList[loop.index0]['SectionType']}}&nbsp;{{section}}</a></td>
+<td>{{ MeetingList[loop.index0][0]['InstructorName']}} </td>
+<td>{{ MeetingList[loop.index0][0]['Days']}} ,
+{{ MeetingList[loop.index0][0]['Times']}} </td>
+<td>{{ MeetingList[loop.index0][0]['Location']}} </td>
+<td>{{SectionDetailsList[loop.index0]['EnrollmentStatus']}} </td>
+<td>{{SectionDetailsList[loop.index0]['CreditHours']}} </td>
+<td>{{SectionDetailsList[loop.index0]['AvailableSeats']}} </td>
+<td>{{SectionDetailsList[loop.index0]['EnrollmentTotal']}} </td>
+<td>{{SectionDetailsList[loop.index0]['EnrollmentCapacity']}} </td>
+<td>{{SectionDetailsList[loop.index0]['WaitTotal']}} </td>
+</tr> {% endfor %} </div>
+</table> </center>
+{% endblock %}Des
+Status API Training Shop Blog About Pricing

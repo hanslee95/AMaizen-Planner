@@ -1,0 +1,128 @@
+#cf {
+  position:relative;
+  height:100%;
+  width:1300px;
+  margin:0 auto;
+}
+
+#cf img {
+    position: absolute;
+    margin: auto;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity:0;
+}
+title {
+    font-color: white;
+}
+h1 {
+    font-family: 'Lucida Sans Typewriter', 'Lucida Console', 'Bitstream Vera Sans Mono', monospace;
+    font-style: normal;
+    font-variant: small-caps;
+    font-weight: 1500;
+    line-height: 26.4px;
+    color: black;
+    font-size: 500%;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 60px;
+}
+h2 {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 250%;
+    margin: auto;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+    line-height: 26.4px;
+    font-variant: small-caps;
+}
+h3 {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 200%;
+    margin: auto;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+    line-height: 30px;
+    font-variant: small-caps;
+}
+th {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 140%;
+    margin: auto;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    text-align: left;
+    line-height: 26.4px;
+}
+td {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 140%;
+    margin: auto;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    text-align: left;
+    line-height: 26.4px;
+}
+p {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #00004d;
+    font-size: 100%;
+    margin-left: 30px;
+    margin-top: 500px;
+    text-align: center;
+}
+a {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 200%;
+    margin-left: 40px;
+    margin-bottom: 100px;
+    text-align: center;
+    line-height: 26.4px;
+    font-variant: small-caps;
+}
+
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: #0088cc;
+}
+a:active {
+    color: #0088cc;
+}
+
+a.back-to-top {
+    display: none;
+    width: 100px;
+    height: 80px;
+    text-indent: -1px;
+    position: fixed;
+    z-index: 0;
+    right: 10px;
+    bottom: 10px;
+    background: #FFFFFF url("http://findicons.com/files/icons/2427/retina/64/arrow_up.png") no-repeat center 100%;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+

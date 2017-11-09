@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+hr.style18 { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+  margin: auto;
+} 
+hr.style18:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px;
+}
+</style>
+<h1> <center> Location </center></h1>
+<center><hr class="style18"> 
+
+{% for section in SectionNumList %} 
+{{ MeetingList[loop.index0][0]['Location']}}
+{% endfor %}
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCcazbZyHKmIAwLoy90aiFKeV4Rl94Ly5k
+    &q=  , University of Michigan Ann Arbor + MI" allowfullscreen>
+</iframe>
+
+{% endblock %}Des
+Status API Training Shop Blog About Pricing</center>
